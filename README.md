@@ -11,4 +11,10 @@ This is a code repository for the Problem Statement 2 in the Tech-A-Thon 3.0 org
 
 ## Screenshots
 
-![s1]()
+![s1](https://raw.githubusercontent.com/RitikSinha/doctics-tech-a-thon-3.0/master/screenshots/01.png)
+![s1](https://raw.githubusercontent.com/RitikSinha/doctics-tech-a-thon-3.0/master/screenshots/02.png)
+![s1](https://raw.githubusercontent.com/RitikSinha/doctics-tech-a-thon-3.0/master/screenshots/03.png)
+![s1](https://raw.githubusercontent.com/RitikSinha/doctics-tech-a-thon-3.0/master/screenshots/04.png)
+![s1](https://raw.githubusercontent.com/RitikSinha/doctics-tech-a-thon-3.0/master/screenshots/05.png)
+![s1](https://raw.githubusercontent.com/RitikSinha/doctics-tech-a-thon-3.0/master/screenshots/06.png)
+![s1](https://raw.githubusercontent.com/RitikSinha/doctics-tech-a-thon-3.0/master/screenshots/07.png)
