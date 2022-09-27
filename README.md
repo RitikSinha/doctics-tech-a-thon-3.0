@@ -3,6 +3,7 @@
 [Live Demo](https://doctics.herokuapp.com/login)
 
 ## Doctor Booking Application <br/>
+##### ⬇️ Promo Video
 [![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/RitikSinha/doctics-tech-a-thon-3.0/master/screenshots/01.png)](https://www.youtube.com/watch?v=BP_2UPg4rTc)
 
 This is a code repository for the Problem Statement 2 in the Tech-A-Thon 3.0 organised in GBU, Gautam Buddh Nagar <br/><br/>
