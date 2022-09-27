@@ -13,14 +13,18 @@ function Appointments() {
   const getAppointmentsData = async () => {
     try {
       dispatch(showLoading());
-      const resposne = await axios.get("/api/user/get-appointments-by-user-id", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const resposne = await axios.get(
+        "/api/user/get-appointments-by-user-id",
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       dispatch(hideLoading());
       if (resposne.data.success) {
         setAppointments(resposne.data.data);
+        console.log(appointments);
       }
     } catch (error) {
       dispatch(hideLoading());
@@ -28,8 +32,19 @@ function Appointments() {
   };
   const columns = [
     {
-        title: "Id",
-        dataIndex: "_id",
+      title: "Video Chat",
+      dataIndex: "_id",
+      render: (text, record) => (
+        <span>
+          <a
+            href={`https://meet.jit.si/${record.doctorInfo._id}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Video Call
+          </a>
+        </span>
+      ),
     },
     {
       title: "Doctor",
@@ -43,34 +58,33 @@ function Appointments() {
     {
       title: "Phone",
       dataIndex: "phoneNumber",
-      render: (text, record) => (
-        <span>
-          {record.doctorInfo.phoneNumber} 
-        </span>
-      ),
+      render: (text, record) => <span>{record.doctorInfo.phoneNumber}</span>,
     },
     {
       title: "Date & Time",
       dataIndex: "createdAt",
       render: (text, record) => (
         <span>
-          {moment(record.date).format("DD-MM-YYYY")} {moment(record.time).format("HH:mm")}
+          {moment(record.date).format("DD-MM-YYYY")}{" "}
+          {moment(record.time).format("HH:mm")}
         </span>
       ),
     },
     {
-        title: "Status",
-        dataIndex: "status",
-    }
+      title: "Status",
+      dataIndex: "status",
+    },
   ];
   useEffect(() => {
     getAppointmentsData();
   }, []);
-  return  <Layout>
-  <h1 className="page-title">Appointments</h1>
-  <hr />
-  <Table columns={columns} dataSource={appointments} />
-</Layout>
+  return (
+    <Layout>
+      <h1 className="page-title">Appointments</h1>
+      <hr />
+      <Table columns={columns} dataSource={appointments} />
+    </Layout>
+  );
 }
 
 export default Appointments;

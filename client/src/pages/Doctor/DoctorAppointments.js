@@ -35,7 +35,7 @@ function DoctorAppointments() {
       dispatch(showLoading());
       const resposne = await axios.post(
         "/api/doctor/change-appointment-status",
-        { appointmentId : record._id, status: status },
+        { appointmentId: record._id, status: status },
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -56,6 +56,17 @@ function DoctorAppointments() {
     {
       title: "Id",
       dataIndex: "_id",
+      render: (text, record) => (
+        <span>
+          <a
+            href={`https://meet.jit.si/${record.userInfo._id}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Video Call
+          </a>
+        </span>
+      ),
     },
     {
       title: "Patient",
